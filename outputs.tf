@@ -60,3 +60,15 @@ output "redis_configuration" {
   value       = azurerm_redis_cache.this.redis_configuration
   description = "Redis configuration"
 }
+
+output "primary_connection_string" {
+  sensitive   = true
+  value       = azurerm_redis_cache.this.primary_connection_string
+  description = "The primary connection string of the Redis Instance."
+}
+
+output "secondary_connection_string" {
+  sensitive   = true
+  value       = azurerm_redis_cache.this.secondary_connection_string
+  description = "The secondary connection string of the Redis Instance."
+}
