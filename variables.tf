@@ -102,6 +102,12 @@ variable "data_persistence_enabled" {
   default     = true
 }
 
+variable "storage_connection_string" {
+  description = "Storage account connection"
+  type = string
+  default = null
+}
+
 variable "data_persistence_frequency_in_minutes" {
   description = "Data persistence snapshot frequency in minutes."
   type        = number
@@ -112,19 +118,6 @@ variable "data_persistence_max_snapshot_count" {
   description = "Max number of data persistence snapshots."
   type        = number
   default     = null
-}
-
-
-variable "data_persistence_storage_account_tier" {
-  description = "Replication type for the Storage Account used for data persistence."
-  type        = string
-  default     = "Premium"
-}
-
-variable "data_persistence_storage_account_replication" {
-  description = "Replication type for the Storage Account used for data persistence."
-  type        = string
-  default     = "ZRS"
 }
 
 variable "redis_version" {
