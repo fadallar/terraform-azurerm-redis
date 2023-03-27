@@ -104,8 +104,8 @@ variable "data_persistence_enabled" {
 
 variable "storage_connection_string" {
   description = "Storage account connection"
-  type = string
-  default = null
+  type        = string
+  default     = null
 }
 
 variable "data_persistence_frequency_in_minutes" {
