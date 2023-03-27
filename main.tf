@@ -58,19 +58,3 @@ resource "azurerm_redis_cache" "this" {
     }
   }
 }
-
-resource "azurerm_storage_account" "redis_storage" {
-  count = local.data_persistence_enabled ? 1 : 0
-
-  name                = local.storage_name
-  resource_group_name = var.resource_group_name
-  location            = var.location
-
-  account_tier             = var.data_persistence_storage_account_tier
-  account_replication_type = var.data_persistence_storage_account_replication
-  account_kind             = "StorageV2"
-
-  min_tls_version = "TLS1_2"
-
-  tags = merge(var.default_tags, var.extra_tags)
-}
